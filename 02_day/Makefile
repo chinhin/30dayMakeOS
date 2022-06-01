@@ -10,5 +10,5 @@ clean:
 	rm -rf ./ipl.bin
 	rm -rf ./helloos.img
 
-run:
+run: build
 	qemu-system-x86_64 -fda helloos.img -boot a
