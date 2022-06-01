@@ -3,7 +3,8 @@ ipl.bin: ipl.asm Makefile
 	nasm -o ipl.bin ipl.asm
 
 build: ipl.bin Makefile
-	dd if=ipl.bin of=helloos.img
+	cp ../bootimg/boot.img helloos.img
+	dd if=ipl.bin of=helloos.img conv=notrunc
 
 clean:
 	rm -rf ./ipl.bin
